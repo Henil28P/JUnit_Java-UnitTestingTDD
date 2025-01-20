@@ -33,3 +33,13 @@ A Java Unit Testing project with JUnit as main unit testing framework for Java. 
 
 9. End-to-end testing (UI testing)
 - Testing the application as a whole --> this can be automated with tools such as Selenium and others.
+
+# Test-Driven Development (TDD)
+- Instead of starting with the implementation code, we actually write the unit tests before writing implementation code
+- The unit tests should fail the first time as the implementation code has not been written yet
+- TDD forces the developer to think about the requirement before implementation.
+- TDD ensures tests are not skipped due to time pressure
+- TDD ensures that bugs are spotted early
+- TDD ensures that developers don't skip the test
+- Process: write failing test --> implement code that makes the test pass --> Refactor the code for cleanliness --> (go back to step 1 of writing a new failing test and new feature code needs to be implemented for it)
+- Note: TDD only adds the unit tests. In order to properly test to the application, we'll need to have system and integration tests in place as well.
