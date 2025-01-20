@@ -43,3 +43,10 @@ A Java Unit Testing project with JUnit as main unit testing framework for Java. 
 - TDD ensures that developers don't skip the test
 - Process: write failing test --> implement code that makes the test pass --> Refactor the code for cleanliness --> (go back to step 1 of writing a new failing test and new feature code needs to be implemented for it)
 - Note: TDD only adds the unit tests. In order to properly test to the application, we'll need to have system and integration tests in place as well.
+
+# Advantages of unit testing
+- Validate the smallest units of software - zoom in and see if the tiny pieces do what they should be doing
+- Enable us to find bugs easy and early, not for only newly written code but also more for code that has already been written and accidentally gets influenced by new code - this way with unit testing, we can easily see whenever a new code is knocking over behaviour that we expect.
+- Although unit testing takes a lot of time, it will save money and time as these bugs will be spotted easily and early - this will avoid real trouble on production.
+- Unit testing can force developers to write better and cleaner code.
+- Note: Be aware that only performing unit testing will not catch all the bugs - we need other tests in place as well to test the software as a whole.
