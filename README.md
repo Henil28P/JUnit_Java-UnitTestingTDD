@@ -63,3 +63,9 @@ A Java Unit Testing project with JUnit as main unit testing framework for Java. 
 - JUnit is not standalone - it is part of the xUnit series for all other sorts of programming languages as well, there are multiple versions of the xUnit series that can be used for testing the units of our code - but JUnit is specifically for Java.
 - JUnit enables automated unit testing very easily
 - JUnit is a must-have for TDD using Java
+
+# Summary
+- We need more testing than just unit testing because unit tests don't test that the application as a whole is functioning as expected.
+- Unit testing improves the code quality and ensures that pieces of code behave as expected, because the developer is forced to write testable code.
+- Advantages of TDD for our software: TDD forces the developer to think thoroughly about the implementation code before actually implementing a feature, which leads to better code.
+- JUnit is a unit testing framework for Java.
