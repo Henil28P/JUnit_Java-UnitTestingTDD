@@ -12,4 +12,12 @@ public class CalculateMethodsTest {
 	{
 		Assertions.assertEquals(10, calculateMethods.divide(100,10)); // assertEquals(expectedResult, function to call with parameters)
 	}
+
+	// Test for an exception to occur (eg. when dividing by 0)
+	@Test
+	public void testDivideByZero()
+	{
+		Assertions.assertThrows(ArithmeticException.class, () -> calculateMethods.divide(100, 0));
+		// assertThrows(<typeOfException>, Executable to implement using Lambda expression that takes no parameter but calls the divide() function)
+	}
 }
