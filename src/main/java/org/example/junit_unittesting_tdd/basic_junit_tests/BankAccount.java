@@ -35,4 +35,13 @@ public class BankAccount {
 			throw new RuntimeException();
 		}
 	}
+
+	// deposit() - takes the amount to be deposited as parameter, and it will return the new balance after deposition
+	public double deposit(double amount)
+	{
+		return balance+=amount; // return the old balance + amount deposited currently
+		// we can also check for negative amounts but later
+	}
+
+	// Now test the behaviour of this BankAccount class using JUnit unit testing framework in src/test/java directory
 }
