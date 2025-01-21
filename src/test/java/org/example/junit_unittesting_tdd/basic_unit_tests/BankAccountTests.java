@@ -41,4 +41,13 @@ public class BankAccountTests {
 		assertNotEquals(0,bankAccount.getBalance()); // should pass as 0 is NOT equal to -300
 	}
 
+	// Check if the Bank account is active after creation
+	@Test
+	@DisplayName("Test activation account after creation")
+	public void testActive()
+	{
+		BankAccount bankAccount = new BankAccount(500,0);
+
+		assertTrue(bankAccount.isActive()); // test will pass as isActive boolean field is set to "true" by default in BankAccount.java class
+	}
 }
