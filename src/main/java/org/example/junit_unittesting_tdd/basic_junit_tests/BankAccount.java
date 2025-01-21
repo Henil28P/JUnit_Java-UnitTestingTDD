@@ -4,7 +4,10 @@ public class BankAccount {
 	// Give 2 private properties/fields
 	private double balance;
 	private double minimumBalance;
-	private boolean isActive = true; // default it to true
+	private boolean isActive = true; // default isActive to true
+	private String holderName; // bank account holder's name
+	// Field to return the name of the bank account holder to test with assertNull() and assertNotNull() overloads
+
 	
 	// Constructor to set the above 2 fields
 	public BankAccount(double balance, double minimumBalance)
@@ -30,8 +33,17 @@ public class BankAccount {
 		this.isActive = isActive;
 	}
 
+	public String getHolderName() {
+		return holderName;
+	}
+
+	public void setHolderName(String holderName) {
+		this.holderName = holderName;
+	}
+
 	// create 2 methods for bank operations (withdraw and deposit)
 	// withdraw() will return the amount that we are withdrawing, and if not possible, then throw a runtime exception
+
 	public double withdraw(double amount)
 	{
 		if (balance - amount > minimumBalance)
