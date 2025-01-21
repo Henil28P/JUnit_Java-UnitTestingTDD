@@ -51,13 +51,6 @@ A Java Unit Testing project with JUnit as main unit testing framework for Java. 
 - Unit testing can force developers to write better and cleaner code.
 - Note: Be aware that only performing unit testing will not catch all the bugs - we need other tests in place as well to test the software as a whole.
 
-# Advantages of unit testing
-- Validate the smallest units of software - zoom in and see if the tiny pieces do what they should be doing
-- Enable us to find bugs easy and early, not for only newly written code but also more for code that has already been written and accidentally gets influenced by new code - this way with unit testing, we can easily see whenever a new code is knocking over behaviour that we expect.
-- Although unit testing takes a lot of time, it will save money and time as these bugs will be spotted easily and early - this will avoid real trouble on production.
-- Unit testing can force developers to write better and cleaner code.
-- Note: Be aware that only performing unit testing will not catch all the bugs - we need other tests in place as well to test the software as a whole.
-
 # What is JUnit?
 - JUnit is a unit testing framework for Java - this means that JUnit contains many libraries, functions and options for testing the smallest parts of Java program.
 - JUnit is not standalone - it is part of the xUnit series for all other sorts of programming languages as well, there are multiple versions of the xUnit series that can be used for testing the units of our code - but JUnit is specifically for Java.
@@ -89,3 +82,11 @@ A Java Unit Testing project with JUnit as main unit testing framework for Java. 
 - One of the use cases for annotations is to make rules for an interface that our compiler will take into account (eg. use `@FunctionalInterface` on top of the interface definition).
 1. `@FunctionalAInterface` - this will make sure only 1 abstract method is allowed in that interface.
 2. `@Override` - this makes sure that the method is actually an override from another method in the parent class - so with this annotation on top of the method, we cannot change the name of the method or change the number of parameters
+3. `@Deprecated` - this will warn developers that are using the code that the method they are using is actually deprecated.
+
+# Naming our tests using `@DisplayName` annotation
+- Improve the report that comes out of the test using `@DisplayName`
+- `@DisplayName` is an annotation that allows us to replace a default name with a custom name which allows us to make the report more descriptive.
+- Adding a `@DisplayName` to all of the tests can make the output better structured
+- `@DisplayName` replaces the default name of test class and methods to custom names in the test report
+- Note: It is a good practice to have descriptive names for our test methods, but it's even nicer to have a little description with spaces and punctuation instead.
