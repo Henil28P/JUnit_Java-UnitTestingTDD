@@ -1,6 +1,6 @@
 package org.example.junit_unittesting_tdd.basic_unit_tests;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.example.junit_unittesting_tdd.basic_junit_tests.BankAccount;
 import org.junit.jupiter.api.DisplayName;
@@ -30,4 +30,15 @@ public class BankAccountTests {
 		bankAccount.deposit(500); // deposit 500 to current balance of 400 to bankAccount
 		assertEquals(900,bankAccount.getBalance()); // check if 400(current balance) + 500(deposited amount) = 900 (new balance)
 	}
+
+	@Test
+	@DisplayName("Withdraw will become negative")
+	public void testWithdrawNotStuckAtZero()
+	{
+		BankAccount bankAccount = new BankAccount(500,-1000);
+
+		bankAccount.withdraw(800); // should result in -300 as 500-800=-300 (new balance)
+		assertNotEquals(0,bankAccount.getBalance()); // should pass as 0 is NOT equal to -300
+	}
+
 }
