@@ -69,3 +69,15 @@ A Java Unit Testing project with JUnit as main unit testing framework for Java. 
 - Unit testing improves the code quality and ensures that pieces of code behave as expected, because the developer is forced to write testable code.
 - Advantages of TDD for our software: TDD forces the developer to think thoroughly about the implementation code before actually implementing a feature, which leads to better code.
 - JUnit is a unit testing framework for Java.
+
+# Quick example of a basic Unit test
+1. Simple Java class with 1 method
+2. Write first unit test for the happy path
+3. Write unit test for unhappy path - what happens if we expect an Exception to appear
+
+# Writing our first JUnit test
+1. Write some code that we can test
+2. Add test class
+3. Write test
+4. Run test
+- For this project, look at `Code` class for this example
