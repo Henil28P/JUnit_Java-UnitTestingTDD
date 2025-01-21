@@ -92,5 +92,6 @@ public class BankAccountTests {
 		BankAccount bankAccount = new BankAccount(400,0);
 
 		assertTimeout(Duration.ofNanos(1), () -> bankAccount.deposit(200)); // test will fail if it takes longer than 1 nanosecond to deposit 200 in the bank account
+		assertEquals(0.33,1/3, 0.01); // 0.01 is a delta value range which will result in a pass test as 0.33 is not EXACTLY = to 1/3 but close as 0.01 range
 	}
 }
