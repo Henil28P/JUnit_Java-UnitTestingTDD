@@ -50,4 +50,15 @@ public class BankAccountTests {
 
 		assertTrue(bankAccount.isActive()); // test will pass as isActive boolean field is set to "true" by default in BankAccount.java class
 	}
+
+	// Check if bank account holder's name is set and hence not null using assertNotNull() overload (or not set and hence null using assertNull() overload)
+	@Test
+	@DisplayName("Test set holder name")
+	public void testHolderNameSet()
+	{
+		BankAccount bankAccount = new BankAccount(500,0);
+
+		bankAccount.setHolderName("Henil"); // set holder name to "Henil" using the setter in bankAccount object
+		assertNotNull(bankAccount.getHolderName()); // will pass as holder name string is now "Henil" which is not null
+	}
 }
