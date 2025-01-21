@@ -4,6 +4,7 @@ public class BankAccount {
 	// Give 2 private properties/fields
 	private double balance;
 	private double minimumBalance;
+	private boolean isActive = true; // default it to true
 	
 	// Constructor to set the above 2 fields
 	public BankAccount(double balance, double minimumBalance)
@@ -19,6 +20,14 @@ public class BankAccount {
 
 	public double getMinimumBalance() {
 		return minimumBalance;
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
 	}
 
 	// create 2 methods for bank operations (withdraw and deposit)
