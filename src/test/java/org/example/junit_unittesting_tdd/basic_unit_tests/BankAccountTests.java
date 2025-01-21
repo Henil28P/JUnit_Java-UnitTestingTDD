@@ -71,4 +71,14 @@ public class BankAccountTests {
 
 		assertThrows(RuntimeException.class, () -> bankAccount.withdraw(2000)); // withdraw 2000 (more than current balance of 500) to throw runtime exception
 	}
+	
+	// Check if executables don't throw an exception regardless of the rest of the result
+	@Test
+	@DisplayName("Test no exceptions for withdraw and deposit")
+	public void testWithdrawAndDepositWithoutExceptions()
+	{
+		BankAccount bankAccount = new BankAccount(500,-1000);
+		
+		assertAll(() -> bankAccount.deposit(200), () -> bankAccount.withdraw(450)); // this doesn't look/assert on the result, it only checks whether an exception is thrown or not for the executables passed in its arguments
+	}
 }
