@@ -61,4 +61,14 @@ public class BankAccountTests {
 		bankAccount.setHolderName("Henil"); // set holder name to "Henil" using the setter in bankAccount object
 		assertNotNull(bankAccount.getHolderName()); // will pass as holder name string is now "Henil" which is not null
 	}
+
+	// Check BankAccount class throwing an exception when we try to withdraw below the minimum
+	@Test
+	@DisplayName("Test that we can't withdraw below minimum")
+	public void testNoWithdrawBelowMinimum()
+	{
+		BankAccount bankAccount = new BankAccount(500,-1000);
+
+		assertThrows(RuntimeException.class, () -> bankAccount.withdraw(2000)); // withdraw 2000 (more than current balance of 500) to throw runtime exception
+	}
 }
