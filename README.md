@@ -81,3 +81,11 @@ A Java Unit Testing project with JUnit as main unit testing framework for Java. 
 3. Write test
 4. Run test
 - For this project, look at `Code` class for this example
+
+# Annotations
+- Annotations start with @
+- JUnit uses annotations a lot
+- Annotations are source code metadata
+- One of the use cases for annotations is to make rules for an interface that our compiler will take into account (eg. use `@FunctionalInterface` on top of the interface definition).
+1. `@FunctionalAInterface` - this will make sure only 1 abstract method is allowed in that interface.
+2. `@Override` - this makes sure that the method is actually an override from another method in the parent class - so with this annotation on top of the method, we cannot change the name of the method or change the number of parameters
