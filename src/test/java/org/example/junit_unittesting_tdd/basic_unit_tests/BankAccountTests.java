@@ -2,6 +2,8 @@ package org.example.junit_unittesting_tdd.basic_unit_tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.Duration;
+
 import org.example.junit_unittesting_tdd.basic_junit_tests.BankAccount;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -80,5 +82,15 @@ public class BankAccountTests {
 		BankAccount bankAccount = new BankAccount(500,-1000);
 		
 		assertAll(() -> bankAccount.deposit(200), () -> bankAccount.withdraw(450)); // this doesn't look/assert on the result, it only checks whether an exception is thrown or not for the executables passed in its arguments
+	}
+
+	// Check if test takes too long or not using assertTimeout()
+	@Test
+	@DisplayName("Test speed deposit")
+	public void testDepositTimeout()
+	{
+		BankAccount bankAccount = new BankAccount(400,0);
+
+		assertTimeout(Duration.ofNanos(1), () -> bankAccount.deposit(200)); // test will fail if it takes longer than 1 nanosecond to deposit 200 in the bank account
 	}
 }
