@@ -113,3 +113,22 @@ A Java Unit Testing project with JUnit as main unit testing framework for Java. 
 2. Where the last parameter is a string message
 
 - Note: `fail()` - this method will fail the test regardless if it passes if `fail()` is added to the method and we can insert a message as parameter of the method
+
+# Assumptions
+- Assumptions are a way of setting conditions for executing a test
+- If the assumption is met, the test will be executed
+- If the assumption is not met, the test won't be executed
+- Assumptions are in a class in the `org.junit.jupiter.api` package - this class contains methods that will test assumptions
+
+# Difference between Assertions and Assumptions
+1. Assumption
+- A failed assumption does not lead to a failed test like a failed assertion does, but a failed assumption to an aborted test instead.
+- It an assumption is met, the test is run and if an assumption is not met, the test will be aborted
+
+2. Assertion
+- If an assertion is met, the test will succeed/PASS. If an assertion is not met, the test will FAIL
+
+- Note: An assumption that is met might still lead to a failed test in case the assertion is false
+- Assumptions don't say anything about the outcome of a test, but just about whether the test will actually run or get aborted.
+- Check the documentation of Assumptions to see the methods of the Assumptions class (eg. `assumeTrue()`, `assumeFalse()`, `assumingThat()`, etc)
+- `assumingThat()` - takes 2 arguments (a Boolean condition and an executable) - if the condition is true, it will execute the executable that may contain the assertion
