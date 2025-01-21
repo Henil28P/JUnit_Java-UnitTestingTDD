@@ -60,14 +60,6 @@ public class BankAccount {
 	// deposit() - takes the amount to be deposited as parameter, and it will return the new balance after deposition
 	public double deposit(double amount)
 	{
-		// Try-catch block and sleep for 5 milliseconds to pause the deposit execution to check assertTimeout() assertion
-		try
-		{
-			Thread.sleep(5);
-		} catch (InterruptedException ex)
-		{
-			ex.printStackTrace();
-		}
 		return balance+=amount; // return the old balance + amount deposited currently
 		// we can also check for negative amounts but later
 	}
