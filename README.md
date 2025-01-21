@@ -90,3 +90,26 @@ A Java Unit Testing project with JUnit as main unit testing framework for Java. 
 - Adding a `@DisplayName` to all of the tests can make the output better structured
 - `@DisplayName` replaces the default name of test class and methods to custom names in the test report
 - Note: It is a good practice to have descriptive names for our test methods, but it's even nicer to have a little description with spaces and punctuation instead.
+
+# Advanced Assertions
+- Assertions are used to check the outcome of the test
+- If the assertion fails, the unit test fails
+- Assertions class in `org.junit.jupiter.api` package - use `static` import for this one so that we can use all the methods (eg. assertTrue or assertEquals) without having the Assertions. in front of them
+- There are many overloads in Assertions class of JUnit (assertEquals, assertTrue, etc.)
+- Note: Not all assertions take 2 arguments for comparison such as assertTrue() and assertFalse() take only 1 argument as boolean condition
+
+1. `assertArrayEquals()` - check whether 2 arrays are equal - if they are arrays of objects, it will check whether they are deeply equal looking at the objects on the array
+- It takes an expected array and compares it to the actual array.
+2. `assertTrue()` and `assertFalse()` take only 1 argument for testing on boolean condition
+3. `assertNull()` and `assertNotNull()` also don't require 2 arguments - there is just 1 value for conclusion which depends on being either null or not.
+4. `assertSame()` - to check if variable values are different but they are referring to the exact same object (if wanting to check whether they DON'T point to the same object, then use `assertNotSame()` overload)
+5. `assertThrows()` - to check whether a method throws an exception in certain circumstances (eg. BankAccount class throwing an exception when we try to withdraw below the minimum)
+6. `assetAll()` - to check whether our executables don't throw an exception regardless of the rest of the result.
+7. `assertTimeout()` or `assertTimeoutPreemptively()`- to check whether something takes too long or not.
+
+- Common overloads
+1. The overload that has delta parameter - useful when doing calculations and not knowing the very exact result (eg. when it's a fraction)
+- When a delta is being added, there is a range on the expected result that will result in a match with the expected value (eg. if wanting to test on 1/3, we can write 0.33)
+2. Where the last parameter is a string message
+
+- Note: `fail()` - this method will fail the test regardless if it passes if `fail()` is added to the method and we can insert a message as parameter of the method
