@@ -14,6 +14,16 @@ public class BankAccountTests {
 		
 		// withdraw 300 and use assertEquals to check expected result of withdraw operation functionality
 		bankAccount.withdraw(300);
-		assertEquals(200, bankAccount.getBalance()); // check if 500(current balance)-300(withdrew)=200(new balance)
+		assertEquals(250, bankAccount.getBalance()); // check if 500(current balance)-300(withdrew)=200(new balance)
+	}
+
+	// Test deposition operation
+	@Test
+	public void testDeposit()
+	{
+		BankAccount bankAccount = new BankAccount(400,0); // initial balance as 400 and minimumBalance as 0
+
+		bankAccount.deposit(500); // deposit 500 to current balance of 400 to bankAccount
+		assertEquals(900,bankAccount.getBalance()); // check if 400(current balance) + 500(deposited amount) = 900 (new balance)
 	}
 }
