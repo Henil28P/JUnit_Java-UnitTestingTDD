@@ -1,13 +1,17 @@
 package org.example.junit_unittesting_tdd.advance_junit_tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.time.DayOfWeek;
 
 import org.example.junit_unittesting_tdd.basic_junit_tests.BankAccount;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.RepetitionInfo;
+//import org.junit.jupiter.api.RepeatedTest;
+//import org.junit.jupiter.api.RepetitionInfo;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 @ExtendWith(BankAccountParameterResolver.class)
@@ -21,5 +25,13 @@ public class BankAccountParameterizedTestTest {
 	{
 		bankAccount.deposit(amount); // deposit 500 to current balance of 400 to bankAccount
 		assertEquals(amount,bankAccount.getBalance()); // check if 400(current balance) + 500(deposited amount) = 900 (new balance)
+	}
+
+	// test some sort of enum as we want to use enum source
+	@ParameterizedTest
+	@EnumSource(value = DayOfWeek.class, names = {"TUESDAY", "THURSDAY"}) // the value argument requires the enum that we're using (dayOfWeek built-in enum)
+	public void testDayOfWeek(DayOfWeek day)
+	{
+		assertTrue(day.toString().startsWith("T"));
 	}
 }
