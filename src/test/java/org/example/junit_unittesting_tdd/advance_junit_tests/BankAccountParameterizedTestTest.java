@@ -11,6 +11,7 @@ import org.junit.jupiter.api.DisplayName;
 //import org.junit.jupiter.api.RepetitionInfo;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -33,5 +34,17 @@ public class BankAccountParameterizedTestTest {
 	public void testDayOfWeek(DayOfWeek day)
 	{
 		assertTrue(day.toString().startsWith("T"));
+	}
+
+	@ParameterizedTest
+	@CsvSource({"100, Henil", "200, Alex", "50, Alicia"}) // array contains "amount, name" pair
+	public void depositAndNameTest(double amount, String name, BankAccount bankAccount)
+	{
+		bankAccount.deposit(amount);
+		bankAccount.setHolderName(name);
+		assertEquals(amount, bankAccount.getBalance());
+		assertEquals(name, bankAccount.getHolderName());
+		// JUnit will try to cause the source to the type of the parameter of test method (eg. 100 will be casted to a double, and Mary to a string)
+		// However, if the types and values are not compatible (eg. hi100 instead of 100), it will throw the exception PreconditionViolation
 	}
 }
