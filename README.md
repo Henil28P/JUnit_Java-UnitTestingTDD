@@ -144,3 +144,14 @@ A Java Unit Testing project with JUnit as main unit testing framework for Java. 
 - Useful when we want to separate features, organise code around method or feature
 - It is also used in case of certain conditions (such as when something is not found or found and also when exception gets thrown).
 - Nested classes are added by creating an inner class containing some test methods and we can ensure they run when the parent class gets fired off by adding the @Nested annotation to the inner class
+
+# Summary
+1. To influence the order of our tests: use the `@Order` annotation and annotating our class with `@TestMethodOrder` and the right argument.
+2. When an assumption fails: the test will be aborted.
+3. Nested tests are used to group unit tests.
+4. A test fails when an assertion is not met.
+5. We can recognise annotations by the `@` symbol.
+6. The 3rd argument of an assertion that takes 3 parameters can be either a `delta` or a `custom message`:
+- The delta is the difference that the actual outcome might have from the expected outcome.
+- The custom message is what will pop up when the test fails.
+7. We can influence the name appearing in the test report using `@DisplayName` annotation.
