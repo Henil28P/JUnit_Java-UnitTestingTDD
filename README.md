@@ -176,4 +176,12 @@ public class CarWithDI {
 
 - In our project, we first need to specify what and how our `BankAccount` class needs to get injected by adding a <b>Parameter Resolver</p> in the `BankAccount.java` class
 - `ParameterResolver` is an interface with 2 methods: `supportParameter` and `resolveParameter` (we have to override this)
-- So we need to create a new class implementing `ParameterResolver` first (this class will implement the ParameterResolver interface)
+- So we need to create a new class implementing `ParameterResolver` first (can name it BankAccountParameter Resolver).
+
+# Repeated Unit Tests in JUnit5
+- We can repeat a test a certain number of times using the `@RepeatedTest` annotation
+- This is great for many reasons (testing the behaviour of an endpoint when we access it multiple times).
+- We can replace `@Test` with `@RepeatedTest(n)` and the test will be run 'n' times
+- We can use a special object to get information about repetition - we do this by adding a `repetitionInfo` as a parameter
+- Repeating tests is great for executing multiple times and testing the responses after the 1st time to verify the behaviour (eg. when we want to access an endpoint multiple times)
+- This repeating tests gets more powerful when we can use different parameters every time we run it - concept of `Parameterized tests`
