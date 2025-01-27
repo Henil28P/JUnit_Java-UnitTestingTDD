@@ -155,3 +155,25 @@ A Java Unit Testing project with JUnit as main unit testing framework for Java. 
 - The delta is the difference that the actual outcome might have from the expected outcome.
 - The custom message is what will pop up when the test fails.
 7. We can influence the name appearing in the test report using `@DisplayName` annotation.
+
+# Dependency Injection
+- Way of having less tightly coupled classes
+- It encourages separation of concerns even more which is what we want when only testing units
+- Dependency injection occurs when we don't need to manually create the instance; we get it handed to us
+- Hence, in our project, no `new BankAccount(0,0)` anymore as this BankAccount class will simply be given to us
+- Dependency injection can be done in several ways on the field of a class, on the method, and the constructor parameters
+- Example of pseudocode with and without dependency injection:
+public class CarWithourDI {
+	`private Engine engine = new Engine();`
+	// more code
+}
+
+public class CarWithDI {
+	@Inject // no need to instantiate the Engine object as the framework will give us our Engine object (this is on the field level but can also be done on the method and constructor level as well)
+	private Engine engine;
+	// more code
+}
+
+- In our project, we first need to specify what and how our `BankAccount` class needs to get injected by adding a <b>Parameter Resolver</p> in the `BankAccount.java` class
+- `ParameterResolver` is an interface with 2 methods: `supportParameter` and `resolveParameter` (we have to override this)
+- So we need to create a new class implementing `ParameterResolver` first (this class will implement the ParameterResolver interface)
