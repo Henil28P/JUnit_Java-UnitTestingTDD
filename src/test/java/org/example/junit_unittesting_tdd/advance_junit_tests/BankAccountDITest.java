@@ -13,11 +13,10 @@ public class BankAccountDITest {
 	// Test deposition operation
 	@Test
 	@DisplayName("Deposit 400 successfully")
-	public void testDeposit()
+	public void testDeposit(BankAccount bankAccount)
 	{
-		BankAccount bankAccount = new BankAccount(400,0); // initial balance as 400 and minimumBalance as 0
-
 		bankAccount.deposit(500); // deposit 500 to current balance of 400 to bankAccount
-		assertEquals(900,bankAccount.getBalance()); // check if 400(current balance) + 500(deposited amount) = 900 (new balance)
+		assertEquals(500,bankAccount.getBalance()); // check if 400(current balance) + 500(deposited amount) = 900 (new balance)
 	}
+	// the above indicates that we are working with loosely coupled classes and we're avoiding many BankAccount instantiations by using DI
 }
