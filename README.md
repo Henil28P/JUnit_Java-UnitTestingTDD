@@ -138,3 +138,9 @@ A Java Unit Testing project with JUnit as main unit testing framework for Java. 
 - Usually, this is not a problem as tests should be independent when testing units with JUnit
 - In some cases though, we may want to test the order of the execution (eg. when executing more of integration type of test which is where the order of execution starts to matter)
 - If we do need to order our tests, JUnit 5 comes with an elegant solution with Annotations
+
+# Nested Tests
+- Used to control the relationship between tests
+- Useful when we want to separate features, organise code around method or feature
+- It is also used in case of certain conditions (such as when something is not found or found and also when exception gets thrown).
+- Nested classes are added by creating an inner class containing some test methods and we can ensure they run when the parent class gets fired off by adding the @Nested annotation to the inner class
