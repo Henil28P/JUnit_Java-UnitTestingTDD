@@ -132,3 +132,9 @@ A Java Unit Testing project with JUnit as main unit testing framework for Java. 
 - Assumptions don't say anything about the outcome of a test, but just about whether the test will actually run or get aborted.
 - Check the documentation of Assumptions to see the methods of the Assumptions class (eg. `assumeTrue()`, `assumeFalse()`, `assumingThat()`, etc)
 - `assumingThat()` - takes 2 arguments (a Boolean condition and an executable) - if the condition is true, it will execute the executable that may contain the assertion
+
+# Test execution order
+- Without specifying, we cannot predict the order
+- Usually, this is not a problem as tests should be independent when testing units with JUnit
+- In some cases though, we may want to test the order of the execution (eg. when executing more of integration type of test which is where the order of execution starts to matter)
+- If we do need to order our tests, JUnit 5 comes with an elegant solution with Annotations
