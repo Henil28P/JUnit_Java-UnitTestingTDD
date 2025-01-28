@@ -249,3 +249,14 @@ public class CarWithDI {
 # Disabling unit tests
 - We can disable tests temporarily or permanently using annotations.
 - `@Disabled("reason of disability")`
+
+# Summary
+1. When the condition of, for example, `@EnabledOnJre` is not met, the test will be ignored.
+2. Advantages of dependency injection - dependency injection avoids duplicate code and makes the tests more loosely coupled.
+3. To disable unit tests unconditionally, use `@Disabled`
+4. How are parameterized tests different from repeated tests? Tests are repeated with different parameters for parameterized tests. Repeated tests are simply repeating the same test.
+5. Repeat tests using `@RepeatedTest`
+6. What can be said about the order of the tests when parallel execution is used? They are executed parallel, but the exact order depends on the machine the tests are running on.
+7. Difference between `@Timeout` annotation and `assertTimeout()` assertion - the `@Timeout` annotation is timing the full method and the `assertTimeout()` only the execution of the assertion.
+8. <b>Surefire</b> plugin can be used for custom reports
+9. Difference between `@BeforeAll` and `@BeforeEach`: `@BeforeAll` is only executed once before all the tests and `@BeforeEach` is executed before every test.
