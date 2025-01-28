@@ -185,3 +185,15 @@ public class CarWithDI {
 - We can use a special object to get information about repetition - we do this by adding a `repetitionInfo` as a parameter
 - Repeating tests is great for executing multiple times and testing the responses after the 1st time to verify the behaviour (eg. when we want to access an endpoint multiple times)
 - This repeating tests gets more powerful when we can use different parameters every time we run it - concept of `Parameterized tests`
+
+# Parameterized Tests
+- Combine repeated tests with parameterising it
+- Using the `@ParameterizedTest` annotation enables us to specify a data source for our parameters and when we want to run the test certain number of times, we can do so with different parameters.
+- Different ways to specify a source
+- Parameters come from a source (source is always an array) - eg. `@valueSource`
+- Note: `@ValueSource()` only accepts certain types of elements in the array such as `short`, `byte`, `int`, `long`, `float`, `double`, `char`, `boolean`, `String`, `class`
+- Sources:
+1. `@ValueSource`
+2. `@EnumSource`
+3. `@CsvSource`
+4. `@CsvFileSource` - does the same thing as `@CsvSource`, but instead of containing the CSV, the value is about pointing to the CSV file and this enables us to use a CSV file as input for a test which can be useful when it's a bigger file
