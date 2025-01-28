@@ -11,7 +11,8 @@ import org.junit.jupiter.api.DisplayName;
 //import org.junit.jupiter.api.RepetitionInfo;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.CsvFileSource;
+//import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -37,7 +38,8 @@ public class BankAccountParameterizedTestTest {
 	}
 
 	@ParameterizedTest
-	@CsvSource({"100, Henil", "200, Alex", "50, Alicia"}) // array contains "amount, name" pair
+//	@CsvSource({"100, Henil", "200, Alex", "50, Alicia"}) // array contains "amount, name" pair
+	@CsvFileSource(resources = "details.csv", delimiter = ';') // CSV delimiter
 	public void depositAndNameTest(double amount, String name, BankAccount bankAccount)
 	{
 		bankAccount.deposit(amount);
