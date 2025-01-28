@@ -4,16 +4,23 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.example.junit_unittesting_tdd.basic_junit_tests.BankAccount;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS) // this allows us to use methods with @BeforeAll and @AfterAll without "static"
 public class BankAccountBeforeAndAfterTest {
 	// This class will contain 2 methods: testWithdraw() and testDeposit()
 	static BankAccount bankAccount;
 
-	@BeforeAll // To run code in prepTest() before all other test methods
-	public static void prepTest()
+	// With unit tests, we generally don't want to depend on the test so we could reset the account before every test using @BeforeEach
+	// Have to adjust 2nd method though as the outcome will be different since the account balance is different when it enters that method as the previous one will not affect it
+	// Also, don't need "static" for @BeforeEach and @AfterEach
+	@BeforeEach
+	public void prepTest()
 	{
 		// Initiate the bankAccount in this method instead of top to run before all other test methods
 		System.out.println("Hi!");
@@ -37,8 +44,8 @@ public class BankAccountBeforeAndAfterTest {
 		assertEquals(700,bankAccount.getBalance());
 	}
 
-	@AfterAll // can also put this method on top
-	public static void endTest()
+	@AfterEach
+	public void endTest()
 	{
 		System.out.println("Bye!");
 		// mainly used to close any lingering connections or making sure that the objects get destroyed in the after
