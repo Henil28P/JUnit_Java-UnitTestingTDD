@@ -219,3 +219,10 @@ public class CarWithDI {
 - In many cases, we want to do something before and after our tests - we can perform certain actions before and after our test methods using annotations (`@BeforeAll`, `@AfterAll`, `@BeforeEach`, `@AfterEach`)
 1. `@BeforeAll` and `@AfterAll` - to run before/after all the unit test methods
 2. `@BeforeEach` and `@AfterEach` - to run before/after each of the individual unit tests
+
+# Custom messages and Reports
+- Options for creating messages and reports:
+1. `@DisplayName`
+2. Assertions with custom message - add a custom message as a 3rd argument for assertions
+3. Surefire plugin - stores console outputs/messages in reports - easy to configure plugin but just need to update our `pom.xml`
+- In terminal `$ mvn surefire-report:report` to build the report, and it will generate the reports in the <b>target</b> folder
