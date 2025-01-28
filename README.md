@@ -245,3 +245,7 @@ public class CarWithDI {
 - We can even use all these annotations to create custom annotations as all these annotations actually have scope level annotation as well.
 - So this way we could create combined annotations
 - Deprecated annotations (such as `@EnabledIf` and `@DisabledIf`)
+
+# Disabling unit tests
+- We can disable tests temporarily or permanently using annotations.
+- `@Disabled("reason of disability")`
