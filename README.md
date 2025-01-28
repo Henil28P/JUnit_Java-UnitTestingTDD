@@ -197,3 +197,15 @@ public class CarWithDI {
 2. `@EnumSource`
 3. `@CsvSource`
 4. `@CsvFileSource` - does the same thing as `@CsvSource`, but instead of containing the CSV, the value is about pointing to the CSV file and this enables us to use a CSV file as input for a test which can be useful when it's a bigger file
+
+# Timeouts
+- Specify maximum duration for the tests
+- Many deprecated ways to do it: `Timeout attribute` and `Rule for all tests`
+- 2 current solutions in JUnit5 for timeouts: `@Timeout` and `assertTimeout()` method from Assertions class
+1. `@Timeout` - takes 2 attributes/parameters (the amount it can wait and the unit of time)
+2. `assertTimeout()` - this won't take the full time of the test method but only the assertion as this timeout is done on the assertion level
+- This is more accurate in most situations as this is the level we usually want to know the execution time of.
+- This needs 2 arguments - duration of timeout and executable using Lambda expression to fail the test
+- When using `assertTimeout()`, instead of sleep, we would want to have an actual task in the executable of the `assertTimeout()` instead of just Thread.sleep().
+- To use Thread.sleep(), use `@Timeout()`
+- More preferred when we need to be more precise or whenever we need to do a lot of heavy work before the assert that we do not want to take in account for our timeout
