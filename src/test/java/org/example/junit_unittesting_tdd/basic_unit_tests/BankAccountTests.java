@@ -30,7 +30,7 @@ public class BankAccountTests {
 		BankAccount bankAccount = new BankAccount(400,0); // initial balance as 400 and minimumBalance as 0
 
 		bankAccount.deposit(500); // deposit 500 to current balance of 400 to bankAccount
-		assertEquals(900,bankAccount.getBalance()); // check if 400(current balance) + 500(deposited amount) = 900 (new balance)
+		assertEquals(900,bankAccount.getBalance(), "Unexpected value, expected 900"); // check if 400(current balance) + 500(deposited amount) = 900 (new balance)
 	}
 
 	@Test
