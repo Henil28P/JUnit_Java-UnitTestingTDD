@@ -214,3 +214,8 @@ public class CarWithDI {
 - Parallel Execution means that multiple tests are running at the same time - this can be done when the order and also the order of the report doesn't matter.
 - In JUnit5, we can easily turn it on by setting the configuration parameter
 - With configuration parameters, we can decide general rules and conditions for tests to run (create a `.properties` file in the resources)
+
+# Lifecycle control: Before and After
+- In many cases, we want to do something before and after our tests - we can perform certain actions before and after our test methods using annotations (`@BeforeAll`, `@AfterAll`, `@BeforeEach`, `@AfterEach`)
+1. `@BeforeAll` and `@AfterAll` - to run before/after all the unit test methods
+2. `@BeforeEach` and `@AfterEach` - to run before/after each of the individual unit tests
