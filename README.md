@@ -209,3 +209,8 @@ public class CarWithDI {
 - When using `assertTimeout()`, instead of sleep, we would want to have an actual task in the executable of the `assertTimeout()` instead of just Thread.sleep().
 - To use Thread.sleep(), use `@Timeout()`
 - More preferred when we need to be more precise or whenever we need to do a lot of heavy work before the assert that we do not want to take in account for our timeout
+
+# Parallel Execution
+- Parallel Execution means that multiple tests are running at the same time - this can be done when the order and also the order of the report doesn't matter.
+- In JUnit5, we can easily turn it on by setting the configuration parameter
+- With configuration parameters, we can decide general rules and conditions for tests to run (create a `.properties` file in the resources)
