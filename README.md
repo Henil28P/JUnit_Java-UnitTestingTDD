@@ -226,3 +226,22 @@ public class CarWithDI {
 2. Assertions with custom message - add a custom message as a 3rd argument for assertions
 3. Surefire plugin - stores console outputs/messages in reports - easy to configure plugin but just need to update our `pom.xml`
 - In terminal `$ mvn surefire-report:report` to build the report, and it will generate the reports in the <b>target</b> folder
+
+# Conditions for running tests
+- Different conditions, such as:
+1. Certain OS - only run a certain version of a test on a certain OS
+2. Certain JRE - only run a certain version of a test for a specific JRE
+3. System properties
+
+- We can build `if` statements checking for system properties inside our test but it's not a good practice - so to avoid this, we can use annotations
+- Often these conditions tests are not a good practice - it make tests more complicated than they probably should be - however, there are situations in which this is unavoidable.
+- We can also check for system and environment variables using the following annotations:
+1. `@EnabledIfSystemProperty(named = "os.version", matches = "x")`
+2. `@DisabledIfSystemProperty(named = "os.version", matches = "x")`
+3. `@EnabledIfEnvironentVariable(named = "USERNAME", matches = "maaike")`
+- If the condition is true, the test will run
+- If the condition is false, the test won't run and will get ignored
+
+- We can even use all these annotations to create custom annotations as all these annotations actually have scope level annotation as well.
+- So this way we could create combined annotations
+- Deprecated annotations (such as `@EnabledIf` and `@DisabledIf`)
