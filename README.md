@@ -260,3 +260,10 @@ public class CarWithDI {
 7. Difference between `@Timeout` annotation and `assertTimeout()` assertion - the `@Timeout` annotation is timing the full method and the `assertTimeout()` only the execution of the assertion.
 8. <b>Surefire</b> plugin can be used for custom reports
 9. Difference between `@BeforeAll` and `@BeforeEach`: `@BeforeAll` is only executed once before all the tests and `@BeforeEach` is executed before every test.
+
+# How to make code ready for testing - Qualities of Testable code:
+- **Test small units**: split up code (if we test big chunks of code, the bugs might slip between our hands or we will get a failed test and there needs to be so much debugging after failed test).
+- Loosely coupled and has high cohesion (clean code principle - chunks of code, it’d be methods or classes, they should have few dependencies on each other as possible, because changes to a certain place might break the functionality of code at other places). 
+→To only test the unit we are testing, we can use `Dependency Injection`.
+- **Single Responsibility Principle** - another way to keep our code loosely coupled is to make sure a piece of code only has 1 responsibility.
+- **High cohesion** - deals with the organization of the code (means that the code that belongs together should be closely placed together). All about structuring our code in a logical way which will increase the maintainability and we can test our code in the same test class because that will make sense based on the code structure.
