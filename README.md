@@ -271,3 +271,13 @@ public class CarWithDI {
 - If a code is easy to test, it indicates that the code is well designed and organised (nicely structured logical code) - this has benefits for maintainability and readability. Writing testable code will already increase the quality of the code.
 - If a code is hard to test, it indicates that the code is badly written
 - Note: avoid copying part of the implementation code logic into the unit tests - this is generally a code smell - considering changing the implementation code.
+
+# Best practices for writing tests
+1. **Keep unit tests as simple as possible**
+2. **Test the actual unit** - don’t make the unit test depend on other tests because then when something goes wrong, we won’t really know what is going wrong and what is actually the code that we’re testing or some dependency that went wrong
+3. **Give unit tests clear naming and stick to a naming conventions** - this will make the code more predictable and easier to read
+4. **Aim for a low-cyclomatic complexity** - cyclomatic complexity are the different execution paths in the code (eg. a simple if statement has 2 paths: one for a true condition and one for a false condition - this gives a cyclomatic complexity of 2 due to 2 code paths)
+→ If we have high cyclomatic complexity, it’ll be hard to determine why our test fails.
+5. **Tests shouldn’t contain copies of the implementation code logic** because if there is a problem in the implementation code, it won’t be spotted by our test since the implementation is copied over there. Also when the implementation changes and goes ahead and break stuff, this won’t be reflected by our test since this one was copying the implementation
+6. **Make sure the tests are deterministic** - this means that tests do the same thing everytime we run them (if they fail the first time, they’ll fail the second time … and the 100th time and same case for passing first time and passing the 100th time) - that is, if the code being tested didn’t change in the meantime.
+→ In order to achieve this, the tests should be loosely coupled - they shouldn’t depend on external code that is not subject to the test, they shouldn’t depend on other test cases, or for example, the environment values or global state for the application
