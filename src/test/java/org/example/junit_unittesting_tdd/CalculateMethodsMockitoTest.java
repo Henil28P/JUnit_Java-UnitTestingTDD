@@ -1,5 +1,8 @@
 package org.example.junit_unittesting_tdd;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -22,4 +25,12 @@ public class CalculateMethodsMockitoTest {
 		// in the Mockito.when(<specify what needs to happen when doing a certain action>)
 		Mockito.when(calculateMethods.divide(6, 3)).thenReturn(2.0); // whenever the divide() is called with parameters 6 and 3, we will return 2.0
 	}
+
+	// Use the above mock in our testDivide()
+	@Test
+	public void testDivide()
+	{
+		assertEquals(2.0, calculateMethods.divide(6, 3));
+	}
+	// This can be useful in many situations, for example, when we want to control what an API call should return for testing purposes
 }
