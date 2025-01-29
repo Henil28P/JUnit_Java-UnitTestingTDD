@@ -261,6 +261,7 @@ public class CarWithDI {
 8. <b>Surefire</b> plugin can be used for custom reports
 9. Difference between `@BeforeAll` and `@BeforeEach`: `@BeforeAll` is only executed once before all the tests and `@BeforeEach` is executed before every test.
 
+<<<<<<< Updated upstream
 # How to make code ready for testing - Qualities of Testable code:
 - **Test small units**: split up code (if we test big chunks of code, the bugs might slip between our hands or we will get a failed test and there needs to be so much debugging after failed test).
 - Loosely coupled and has high cohesion (clean code principle - chunks of code, it’d be methods or classes, they should have few dependencies on each other as possible, because changes to a certain place might break the functionality of code at other places). 
@@ -281,3 +282,8 @@ public class CarWithDI {
 5. **Tests shouldn’t contain copies of the implementation code logic** because if there is a problem in the implementation code, it won’t be spotted by our test since the implementation is copied over there. Also when the implementation changes and goes ahead and break stuff, this won’t be reflected by our test since this one was copying the implementation
 6. **Make sure the tests are deterministic** - this means that tests do the same thing everytime we run them (if they fail the first time, they’ll fail the second time … and the 100th time and same case for passing first time and passing the 100th time) - that is, if the code being tested didn’t change in the meantime.
 → In order to achieve this, the tests should be loosely coupled - they shouldn’t depend on external code that is not subject to the test, they shouldn’t depend on other test cases, or for example, the environment values or global state for the application
+=======
+# How to make code ready for unit testing
+- In order to start with unit tests, the code that needs to be tested will have to be testable.
+- What to do to get our code testable: 
+>>>>>>> Stashed changes

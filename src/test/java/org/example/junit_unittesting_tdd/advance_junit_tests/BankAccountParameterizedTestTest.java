@@ -39,14 +39,14 @@ public class BankAccountParameterizedTestTest {
 
 	@ParameterizedTest
 //	@CsvSource({"100, Henil", "200, Alex", "50, Alicia"}) // array contains "amount, name" pair
-	@CsvFileSource(resources = "details.csv", delimiter = ';') // CSV delimiter
+	@CsvFileSource(resources = "../details.csv") // CSV delimiter
 	public void depositAndNameTest(double amount, String name, BankAccount bankAccount)
 	{
 		bankAccount.deposit(amount);
 		bankAccount.setHolderName(name);
 		assertEquals(amount, bankAccount.getBalance());
 		assertEquals(name, bankAccount.getHolderName());
-		// JUnit will try to cause the source to the type of the parameter of test method (eg. 100 will be casted to a double, and Mary to a string)
+		// JUnit will try to cause the source to the type of the parameter of test method (eg. 100 will be casted to a double, and Henil to a string)
 		// However, if the types and values are not compatible (eg. hi100 instead of 100), it will throw the exception PreconditionViolation
 	}
 }
