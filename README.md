@@ -174,7 +174,7 @@ public class CarWithDI {
 	// more code
 }
 
-- In our project, we first need to specify what and how our `BankAccount` class needs to get injected by adding a <b>Parameter Resolver</p> in the `BankAccount.java` class
+- In our project, we first need to specify what and how our `BankAccount` class needs to get injected by adding a <b>Parameter Resolver</b> in the `BankAccount.java` class
 - `ParameterResolver` is an interface with 2 methods: `supportParameter` and `resolveParameter` (we have to override this)
 - So we need to create a new class implementing `ParameterResolver` first (can name it BankAccountParameter Resolver).
 
