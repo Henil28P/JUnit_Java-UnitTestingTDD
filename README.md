@@ -267,3 +267,7 @@ public class CarWithDI {
 →To only test the unit we are testing, we can use `Dependency Injection`.
 - **Single Responsibility Principle** - another way to keep our code loosely coupled is to make sure a piece of code only has 1 responsibility.
 - **High cohesion** - deals with the organization of the code (means that the code that belongs together should be closely placed together). All about structuring our code in a logical way which will increase the maintainability and we can test our code in the same test class because that will make sense based on the code structure.
+
+- If a code is easy to test, it indicates that the code is well designed and organised (nicely structured logical code) - this has benefits for maintainability and readability. Writing testable code will already increase the quality of the code.
+- If a code is hard to test, it indicates that the code is badly written
+- Note: avoid copying part of the implementation code logic into the unit tests - this is generally a code smell - considering changing the implementation code.
